@@ -1,73 +1,61 @@
 ﻿<!DOCTYPE html>
 <html>
-<h1 style="color: red;">
-    CSS TEXXT
-</h1>
 <head>
-    <title>Scently - Nước hoa dành cho nam</title>
-    <link rel="stylesheet" href="Style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="path/to/main.css" rel="stylesheet" />
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Scently</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Trang chủ</a></li>
-                    <li><a href="#">Sản phẩm</a></li>
-                    <li><a href="#">Giới thiệu</a></li>
-                    <li><a href="#">Liên hệ</a></li>
-                </ul>
-            </nav>
+        <div class="video-container">
+            <video id="myVideo" autoplay loop muted>
+                <source src="~/Content/Video/Video.mp4" type="video/mp4">
+            </video>
+
         </div>
     </header>
-    <main>
-        @RenderBody()
+    <div class="b-example-divider"></div>
 
-        @RenderSection("scripts", required: false)
-        <section class="hero">
-            <div class="container">
-                <h2>Nước hoa dành cho nam</h2>
-                <p>Khám phá bộ sưu tập nước hoa dành cho nam của Scently với mùi hương mạnh mẽ và nam tính.</p>
-                <a href="#" class="btn btn-primary">Mua ngay</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand navbar-logo" href="#">
+                <img src="path/to/logo.png" alt="Logo">
+            </a>
+            <div class="navbar-menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cửa hàng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Thương hiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
+                </ul>
             </div>
-        </section>
-        <section class="featured-products">
-            <div class="container">
-                <h2>Sản phẩm nổi bật</h2>
-                <div class="product-grid">
-                    <div class="product">
-                        <img src="product1.jpg" alt="Product 1">
-                        <h3>Nước hoa nam 1</h3>
-                        <p class="price">$50</p>
-                    </div>
-                    <div class="product">
-                        <img src="product2.jpg" alt="Product 2">
-                        <h3>Nước hoa nam 2</h3>
-                        <p class="price">$40</p>
-                    </div>
-                    <div class="product">
-                        <img src="product3.jpg" alt="Product 3">
-                        <h3>Nước hoa nam 3</h3>
-                        <p class="price">$60</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="container">
-            <p>&copy; Scently 2023. All rights reserved.</p>
         </div>
-    </footer>
-</body>
-</html>
-.</p>
-    </footer>
-</body>
-</html>
+    </nav>
 
-@Scripts.Render("~/bundles/bootstrap")
-@RenderSection("scripts", required: false)
+    <main>@RenderBody()</main>
+
+    <footer style="background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;">
+        <p>&copy; 2023 My website.</p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

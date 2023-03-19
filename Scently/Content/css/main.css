@@ -1,0 +1,161 @@
+﻿/* Style for navbar /
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 80px;
+padding: 0 50px;
+background-color: rgba(0, 0, 0, 0.5); / Add background color with 50% transparency /
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+z-index: 1; / Ensure it displays on top of the video */
+}
+
+/* Style for logo */
+.navbar-logo img {
+    width: 80px;
+}
+
+.container {
+    position: relative;
+}
+
+/* Style for menu */
+.navbar-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .navbar-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar-menu a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-left: 20px;
+    }
+
+/* Style for navbar-brand */
+.navbar-brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+/* Style for menu content container */
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+#myVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+
+
+Rewritten CSS Code:
+
+/* Styles for the navigation bar /
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 80px;
+padding: 0 50px;
+background-color: rgba(0, 0, 0, 0.5); / Adds a background color with 50% transparency /
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+z-index: 1; / Ensures it displays on top of the video */
+}
+
+/* Styles for the logo */
+.navbar-logo img {
+    width: 80px;
+}
+
+/* Styles for the menu content container */
+.container {
+    position: relative;
+}
+
+/* Styles for the menu */
+.navbar-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .navbar-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar-menu a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-left: 20px;
+    }
+
+/* Styles for the navbar brand */
+.navbar-brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+/* Styles for the menu content container */
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+/* Styles for the video */
+#myVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Đẩy video xuống dưới cùng */
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Thiết lập chiều cao tối đa của video */
+    overflow: hidden;
+}
+.navbar, main, footer {
+    /* Thiết lập vị trí, kích thước, màu nền và các thuộc tính khác của các phần tử khác */
+    position: relative;
+    z-index: 1; /* Đảm bảo các phần tử này luôn hiển thị trên video */
+}
+
+
