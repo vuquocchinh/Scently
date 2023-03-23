@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using Scently.Models;
+using PagedList;
+
 
 namespace Scently.Controllers
 {
@@ -38,6 +40,17 @@ namespace Scently.Controllers
             }
             return View(product);
         }
+        // Get: Quan ly Product
+        public ActionResult QLProducts(int? page)
+        {
+
+            var Sanpham = from sp in data.SanPhams
+                          orderby sp.idSP
+                          select sp;
+            return View(Sanpham);
+
+        }
+
 
         // GET: Product/Create
         public ActionResult Create()
