@@ -47,13 +47,13 @@
         <classShapeMoniker Id="86ec6677-62ed-4700-a5d0-18020fc6911e" />
       </nodes>
     </associationConnector>
-    <classShape Id="c61240a9-9af2-4a96-8e84-67cbe9d0bfce" absoluteBounds="1, 0.875, 2, 2.3478011067708335">
+    <classShape Id="c61240a9-9af2-4a96-8e84-67cbe9d0bfce" absoluteBounds="0.5, 0.625, 2, 2.3478011067708335">
       <DataClassMoniker Name="/ScentlyDataContext/TaiKhoan" />
       <nestedChildShapes>
-        <elementListCompartment Id="07c10161-1949-4d9b-9795-be121cd26960" absoluteBounds="1.0150000000000001, 1.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="07c10161-1949-4d9b-9795-be121cd26960" absoluteBounds="0.51500000000000012, 1.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1 : 2.04890055338542); (0.5 : 2.04890055338542); (0.5 : 3.60659912109375); (0.75 : 3.60659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(0.5 : 1.79890055338542); (0.125 : 1.79890055338542); (0.125 : 3.81174917447917); (0.75 : 3.81174917447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ScentlyDataContext/TaiKhoan/TaiKhoan_DonHang" />
       <nodes>
         <classShapeMoniker Id="c61240a9-9af2-4a96-8e84-67cbe9d0bfce" />
