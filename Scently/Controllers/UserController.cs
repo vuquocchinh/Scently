@@ -49,8 +49,12 @@ namespace Scently.Controllers
             }
         }
 
-
-
+        // Logout
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
+        }
 
         // GET: Register
         public ActionResult Register()
