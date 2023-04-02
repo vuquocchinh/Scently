@@ -80,8 +80,7 @@ namespace Scently.Controllers
                 data.TaiKhoans.InsertOnSubmit(user);
                 data.SubmitChanges();
 
-                // Đăng ký thành công, thực hiện lưu session và chuyển hướng đến trang chủ
-                Session["taiKhoan"] = user.taiKhoan1;
+                // Chuyển hướng đến trang chủ
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -91,5 +90,6 @@ namespace Scently.Controllers
                 return View();
             }
         }
+
     }
 }

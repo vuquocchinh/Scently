@@ -45,7 +45,7 @@
                 <!-- Đối với người dùng đã đăng nhập -->
                 @if (Session["taiKhoan"] != null)
                 {
-                    <button style=" " class="btn-logout">
+                    <button style=" " class="btn btn-outline-warning btn-sm">
                         <a href="~/User/Logout">
                             <i class="fas fa-arrow-right"></i>
                             <span>Logout</span>
@@ -54,10 +54,9 @@
                 }
 
 
-
                 else
                 {
-                    <button style=" " class="btn-login">
+                    <button style=" " class="btn btn-outline-warning btn-sm">
                         <a href="~/User/Login">
                             <i class="fas fa-arrow-right"></i>
                             <span>Login</span>

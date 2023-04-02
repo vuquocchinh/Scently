@@ -67,7 +67,7 @@ namespace Scently.Controllers
                 {
                     data.SanPhams.InsertOnSubmit(product);
                     data.SubmitChanges();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("QLProducts");
                 }
             }
             catch
@@ -102,6 +102,7 @@ namespace Scently.Controllers
 
                 if (ModelState.IsValid)
                 {
+                  
                     existingProduct.tenSP = product.tenSP;
                     existingProduct.giaSP = product.giaSP;
                     existingProduct.soLuongSP = product.soLuongSP;
@@ -109,12 +110,12 @@ namespace Scently.Controllers
                     existingProduct.thongTinSP = product.thongTinSP;
                     existingProduct.ngayCapNhat = product.ngayCapNhat;
                     existingProduct.idDM = product.idDM;
-                    existingProduct.sale = product.sale;
-                    existingProduct.status = product.status;
+                 
+                  
 
                     data.SubmitChanges();
 
-                    return RedirectToAction("Index");
+                    return RedirectToAction("QLProducts");
                 }
             }
             catch
@@ -148,7 +149,7 @@ namespace Scently.Controllers
                 }
                 data.SanPhams.DeleteOnSubmit(existingProduct);
                 data.SubmitChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("QLProducts");
             }
             catch
             {
