@@ -1,22 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Scently" Class="ScentlyDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-LV7909K;Initial Catalog=Scently;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ScentlyConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.ChiTietDonHang" Member="ChiTietDonHangs">
-    <Type Name="ChiTietDonHang">
-      <Column Name="maDon" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="idSP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="soLuongSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="giaSP" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Association Name="DonHang_ChiTietDonHang" Member="DonHang" ThisKey="maDon" OtherKey="maDon" Type="DonHang" IsForeignKey="true" />
-      <Association Name="SanPham_ChiTietDonHang" Member="SanPham" ThisKey="idSP" OtherKey="idSP" Type="SanPham" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DanhMuc" Member="DanhMucs">
-    <Type Name="DanhMuc">
-      <Column Name="idDM" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="tenDM" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="DanhMuc_SanPham" Member="SanPhams" ThisKey="idDM" OtherKey="idDM" Type="SanPham" />
-    </Type>
-  </Table>
   <Table Name="dbo.DonHang" Member="DonHangs">
     <Type Name="DonHang">
       <Column Name="maDon" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -33,7 +15,7 @@
     <Type Name="SanPham">
       <Column Name="idSP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenSP" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="giaSP" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="giaSP" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="soLuongSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="hinhAnhSP" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="thongTinSP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
@@ -43,6 +25,23 @@
       <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="SanPham_ChiTietDonHang" Member="ChiTietDonHangs" ThisKey="idSP" OtherKey="idSP" Type="ChiTietDonHang" />
       <Association Name="DanhMuc_SanPham" Member="DanhMuc" ThisKey="idDM" OtherKey="idDM" Type="DanhMuc" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DanhMuc" Member="DanhMucs">
+    <Type Name="DanhMuc">
+      <Column Name="idDM" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenDM" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DanhMuc_SanPham" Member="SanPhams" ThisKey="idDM" OtherKey="idDM" Type="SanPham" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiTietDonHang" Member="ChiTietDonHangs">
+    <Type Name="ChiTietDonHang">
+      <Column Name="maDon" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idSP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="soLuongSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="giaSP" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="DonHang_ChiTietDonHang" Member="DonHang" ThisKey="maDon" OtherKey="maDon" Type="DonHang" IsForeignKey="true" />
+      <Association Name="SanPham_ChiTietDonHang" Member="SanPham" ThisKey="idSP" OtherKey="idSP" Type="SanPham" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TaiKhoan" Member="TaiKhoans">

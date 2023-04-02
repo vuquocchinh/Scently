@@ -17,13 +17,12 @@ namespace Scently.Controllers
         // GET: Product
         public ActionResult Index(int? page)
         {
-            int pageSize = 5;
+            int pageSize = 8;
             int pageNum = page ?? 1;
 
             var Sanpham = from sp in data.SanPhams
                           orderby sp.idSP
                           select sp;
-
             return View(Sanpham.ToPagedList(pageNum, pageSize));
         }
 
