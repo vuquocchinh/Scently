@@ -1,0 +1,83 @@
+﻿@model Scently.Models.SanPham
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <link href="~/Content/css/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <h3 style="margin-top:70px; text-align:center;">XÁC NHẬN THÔNG TIN SÁCH CẦN XOÁ</h3>
+    <div>
+        <hr />
+        <dl style="margin-top:30px; margin-left:200px;" class="dl-horizontal">
+            <dt>
+                TÊN SẢN PHẨM
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tenSP)
+            </dd>
+
+            <dt>
+                GIÁ SẢN PHẨM
+            </dt>
+
+            <dd>
+                @String.Format("{0:0,0}", Model.giaSP) VNĐ
+            </dd>
+
+            <dt>
+                SỐ LƯỢNG
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.soLuongSP)
+            </dd>
+
+            <dt>
+                ẢNH SẢN PHẨM
+            </dt>
+
+            <dd>
+                <img src="@Model.hinhAnhSP" style="width:200px;" />
+            </dd>
+
+            <dt>
+                THÔNG TIN SẢN PHẨM
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.thongTinSP)
+            </dd>
+
+            <dt>
+                NGÀY CẬP NHẬT
+            </dt>
+
+            <dd>
+                @String.Format("{0:dd/MM/yyyy}", Model.ngayCapNhat)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color" style="text-align:center;">
+                <input type="submit" value="Xoá" class="btn btn-danger" /> |
+                <a class="btn btn-dark" href="/Product/QLProducts"><i class="fa-solid fa-chevron-left"></i> TRỞ VỀ</a>
+            </div>
+        }
+    </div>
+    <div style="margin-bottom: 50px;">
+    </div>
+</body>
+</html>

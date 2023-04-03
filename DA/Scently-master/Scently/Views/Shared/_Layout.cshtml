@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/224824a321.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        #btn-back-to-top {
+            position: ;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+        }
+    </style>
+    <script>
+        //Get the button
+        let mybutton = document.getElementById("btn-back-to-top");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
+            ) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        mybutton.addEventListener("click", backToTop);
+
+        function backToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+
+    </div>
+    <div class="b-example-divider"></div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="container-fluid text-center">
+            <a class="navbar-brand" href="~/home/index">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="~/Home/Index">Trang chủ</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="~/Product/Index">Sản phẩm</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="~/Home/About">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="~/Home/Contact">Liên hệ</a>
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+            <div>
+                <!-- Đối với người dùng đã đăng nhập -->
+                @if (Session["taiKhoan"] != null)
+                {
+                    <a href="@Url.Action("QLProducts","Product")"><button type="button" class="btn btn-outline-warning btn-sm">Quản lý SP</button></a>
+                    <a href="@Url.Action("Logout","User")"><button type="button" class="btn btn-outline-warning btn-sm">Đăng xuất</button></a>
+                }
+
+
+                else
+                {
+                    <a href="@Url.Action("Login","User")"><button type="button" class="btn btn-outline-warning btn-sm">Đăng nhập</button></a>
+                    <a href="@Url.Action("Register","User")"><button type="button" class="btn btn-outline-warning btn-sm">Đăng kí</button></a>
+                }
+            </div>
+
+        </div>
+
+    </nav>
+
+    </header>
+    
+    <main>@RenderBody()</main>
+    @RenderSection("scripts", required: false)
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+<footer class="bg-black text-white">
+    <button type="button"
+            class="btn btn-danger btn-floating btn-lg"
+            id="btn-back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0);">
+        Đoàn Quốc Tri - Vũ Quốc Chinh:
+        <a class="text-light" href="#" style="text-decoration:none;">Scently</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+</html>

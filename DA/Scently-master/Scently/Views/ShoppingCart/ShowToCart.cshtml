@@ -1,0 +1,55 @@
+﻿@model Scently.Models.Cart
+
+
+@{
+    ViewBag.Title = "ShowToCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="margin-top:70px; text-align:center;">Giỏ Hàng</h2>
+@if(Model != null)
+{
+    <Table class="table">
+        <thead>
+        <th> Tên Sản Phẩm</th>
+        <th> Ảnh Sản Phẩm</th>
+        <th> Đơn Giá</th>
+        <th> Số Lượng</th>
+        <th> Thành Tiền</th>
+        <th> Xoá sản phẩm</th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                double total = Convert.ToDouble(item._sp.giaSP * item._quantity);
+                <tr style="text-align:left; font-weight:bold">
+                    <td>@Html.DisplayFor(model => item._sp.tenSP) </td>
+                    <td>
+                        <img style="height:160px; width: auto; " src="@item._sp.hinhAnhSP"
+                             class="card-img-top" alt="@item._sp.tenSP" />
+                    </td>
+                    <td>@Html.DisplayFor(model => item._sp.giaSP)</td>
+                    <td>
+                        @using (Html.BeginForm("Update_Quantity_Cart", "ShoppingCart"))
+                        {
+                            <input type="hidden" value="@item._sp.idSP" name="ID_Product" />
+                            <input type="number" value="@item._quantity" name="Quantity" style="width: 60px;" />
+                            <input type="submit" value="Update" />
+                        }
+                    </td>
+                    <td>@total VNĐ</td>
+                    <td>
+                        <a href="@Url.Action("RemoveCart","ShoppingCart", new { id = @item._sp.idSP })"><button type="button" class="btn btn-danger btn-sm">Xoá</button></a>
+                    </td>
+                    
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr style="font-weight:bold; text-align:right; color:red">
+                <td colspan="5">Tổng giỏ hàng: @Model.ToTal()</td>
+            </tr>
+        </tfoot>
+    </Table>
+}    
+
