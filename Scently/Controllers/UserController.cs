@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -26,7 +27,13 @@ namespace Scently.Controllers
         [HttpPost]
         public ActionResult Login(User user)
         {
-            var loginUser = data.TaiKhoans.Where(x => x.taiKhoan1 == user.TaiKhoan && x.matKhau == user.MatKhau).FirstOrDefault();
+            if (string.IsNullOrEmpty(user.TaiKhoan) || string.IsNullOrEmpty(user.MatKhau))
+            {
+                ModelState.AddModelError("", "Vui lòng điền đầy đủ thông tin tài khoản và mật khẩu");
+                return View();
+            }
+
+            var loginUser = data.TaiKhoans.FirstOrDefault(x => x.taiKhoan1 == user.TaiKhoan && x.matKhau == user.MatKhau);
 
             if (loginUser != null)
             {
@@ -37,9 +44,16 @@ namespace Scently.Controllers
             else
             {
                 // Đăng nhập không thành công, trả về thông báo lỗi
-                ViewBag.Error = "Tài khoản hoặc mật khẩu không đúng";
+                ModelState.AddModelError("", "Tài khoản hoặc mật khẩu không đúng");
                 return View();
             }
+        }
+
+        // Logout
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Register
@@ -66,8 +80,7 @@ namespace Scently.Controllers
                 data.TaiKhoans.InsertOnSubmit(user);
                 data.SubmitChanges();
 
-                // Đăng ký thành công, thực hiện lưu session và chuyển hướng đến trang chủ
-                Session["taiKhoan"] = user.taiKhoan1;
+                // Chuyển hướng đến trang chủ
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -77,5 +90,6 @@ namespace Scently.Controllers
                 return View();
             }
         }
+
     }
 }

@@ -17,13 +17,12 @@ namespace Scently.Controllers
         // GET: Product
         public ActionResult Index(int? page)
         {
-            int pageSize = 5;
+            int pageSize = 8;
             int pageNum = page ?? 1;
 
             var Sanpham = from sp in data.SanPhams
                           orderby sp.idSP
                           select sp;
-
             return View(Sanpham.ToPagedList(pageNum, pageSize));
         }
 
@@ -68,7 +67,7 @@ namespace Scently.Controllers
                 {
                     data.SanPhams.InsertOnSubmit(product);
                     data.SubmitChanges();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("QLProducts");
                 }
             }
             catch
@@ -103,6 +102,7 @@ namespace Scently.Controllers
 
                 if (ModelState.IsValid)
                 {
+                  
                     existingProduct.tenSP = product.tenSP;
                     existingProduct.giaSP = product.giaSP;
                     existingProduct.soLuongSP = product.soLuongSP;
@@ -110,12 +110,12 @@ namespace Scently.Controllers
                     existingProduct.thongTinSP = product.thongTinSP;
                     existingProduct.ngayCapNhat = product.ngayCapNhat;
                     existingProduct.idDM = product.idDM;
-                    existingProduct.sale = product.sale;
-                    existingProduct.status = product.status;
+                 
+                  
 
                     data.SubmitChanges();
 
-                    return RedirectToAction("Index");
+                    return RedirectToAction("QLProducts");
                 }
             }
             catch
@@ -149,7 +149,7 @@ namespace Scently.Controllers
                 }
                 data.SanPhams.DeleteOnSubmit(existingProduct);
                 data.SubmitChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("QLProducts");
             }
             catch
             {

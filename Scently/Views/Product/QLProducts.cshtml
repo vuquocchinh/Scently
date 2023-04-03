@@ -7,12 +7,20 @@
 }
 <head>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="xxxxxxxxxxxxxxxxxxxxxxx" crossorigin="anonymous" />
-
+    <style>
+        #btn {
+            width:65px;
+            margin-bottom:5px;
+        }
+    </style>
 </head>
-</p>
 
 
-<h2 style="text-align:center; margin-top:50px;">QLProducts</h2>
+
+<h2 style="text-align:center; margin-top:50px;">Quản lý sản phẩm</h2>
+<div style=" text-align: right; ">
+    <a href="@Url.Action("Create")"><button type="button" class="btn btn-secondary ">Thêm sản phẩm mới</button></a>
+</div>
 <table style="margin-top: 70px;" class="table">
     <tr>
         <th> Mã loại </th>
@@ -33,15 +41,11 @@
             <td>@Html.DisplayFor(modelItem => item.ngayCapNhat)</td>
             <td>@Html.DisplayFor(modelItem => item.soLuongSP)</td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.idSP }) <br />
-                @Html.ActionLink("Details", "Details", new { id = item.idSP }) <br />
-                @Html.ActionLink("Delete", "Delete", new { id = item.idSP }) <br />
-                <a href="@Url.Action("Create")"><i class="fas fa-circle-plus"></i> Create</a>
-
+                <a href="@Url.Action("Edit","Product", new { id = item.idSP })"><button id="btn" type="button"  class="btn btn-outline-success btn-sm">Sửa</button></a> <br />
+                <a href="@Url.Action("Details","Product", new { id = item.idSP })"><button id="btn" type="button" class="btn btn-outline-success btn-sm">Chi tiết</button></a><br />
+                <a href="@Url.Action("Delete","Product", new { id = item.idSP })"><button id="btn" type="button" class="btn btn-outline-success btn-sm">Xoá</button></a>
+                
             </td>
-
-
-
         </tr>
     }
 </table>

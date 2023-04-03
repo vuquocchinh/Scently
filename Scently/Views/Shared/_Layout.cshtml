@@ -17,7 +17,7 @@
     <div class="b-example-divider"></div>
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <div class="container-fluid text-center">
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="~/home/index">Logo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -30,7 +30,7 @@
                         <a class="nav-link" href="#">Giới thiệu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sản phẩm</a>
+                        <a class="nav-link" href="~/Product/Index">Sản phẩm</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Liên hệ</a>
@@ -43,21 +43,20 @@
             </div>
             <div>
                 <!-- Đối với người dùng đã đăng nhập -->
-                @if (ViewBag.isLoggedIn != null && (bool)ViewBag.isLoggedIn)
+                @if (Session["taiKhoan"] != null)
                 {
-                    <button class="btn-logout">
-                        <a href="~/Home/Index">
-                            <i class="fas fa-sign-out-alt"></i>
+                    <button style=" " class="btn btn-outline-warning btn-sm">
+                        <a href="~/User/Logout">
+                            <i class="fas fa-arrow-right"></i>
                             <span>Logout</span>
                         </a>
                     </button>
-
                 }
 
 
                 else
                 {
-                    <button style=" " class="btn-login">
+                    <button style=" " class="btn btn-outline-warning btn-sm">
                         <a href="~/User/Login">
                             <i class="fas fa-arrow-right"></i>
                             <span>Login</span>
@@ -67,7 +66,7 @@
             </div>
 
         </div>
-        
+
     </nav>
 
     </header>
@@ -77,7 +76,7 @@
 
     <main>@RenderBody()</main>
 
-    
+
 
     @RenderSection("scripts", required: false)
 

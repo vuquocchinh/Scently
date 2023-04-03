@@ -709,7 +709,7 @@ namespace Scently.Models
 		
 		private string _tenSP;
 		
-		private decimal _giaSP;
+		private System.Nullable<int> _giaSP;
 		
 		private int _soLuongSP;
 		
@@ -737,7 +737,7 @@ namespace Scently.Models
     partial void OnidSPChanged();
     partial void OntenSPChanging(string value);
     partial void OntenSPChanged();
-    partial void OngiaSPChanging(decimal value);
+    partial void OngiaSPChanging(System.Nullable<int> value);
     partial void OngiaSPChanged();
     partial void OnsoLuongSPChanging(int value);
     partial void OnsoLuongSPChanged();
@@ -802,8 +802,8 @@ namespace Scently.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giaSP", DbType="Money NOT NULL")]
-		public decimal giaSP
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giaSP", DbType="Int")]
+		public System.Nullable<int> giaSP
 		{
 			get
 			{

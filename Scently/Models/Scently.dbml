@@ -33,7 +33,7 @@
     <Type Name="SanPham">
       <Column Name="idSP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenSP" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="giaSP" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="giaSP" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="soLuongSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="hinhAnhSP" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="thongTinSP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
